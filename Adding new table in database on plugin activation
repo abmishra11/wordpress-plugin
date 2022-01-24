@@ -36,3 +36,20 @@ function custom_plugin_activate(){
 }
 
 register_activation_hook(__FILE__, 'custom_plugin_activate');
+
+function custom_plugin_deactivate(){
+	$page_id = get_option('custom_plugin_page_id');
+
+	if(!empty($page_id)){
+		wp_delete_post($page_id);
+	}
+}
+
+register_deactivation_hook(__FILE__, 'custom_plugin_deactivate');
+
+function delete_plugin_table(){
+	global $wpdb;
+	$wpdb->query("DROP table IF Exists wp_custom_plugin");
+}
+
+register_uninstall_hook(__FILE__, 'delete_plugin_table');
