@@ -1,4 +1,6 @@
 https://www.youtube.com/watch?v=nzRyFF95jXI&list=PLT9miexWCpPUQkQwL-COHmo0Jd0qxLjTn&index=8
+https://www.youtube.com/watch?v=sa28dHu6YCA&list=PLT9miexWCpPUQkQwL-COHmo0Jd0qxLjTn&index=9
+https://www.youtube.com/watch?v=oL8ffxggYZY&list=PLT9miexWCpPUQkQwL-COHmo0Jd0qxLjTn&index=10
 
 define('PLUGIN_DIR_PATH', plugin_dir_path(__FILE__));
 define('PLUGIN_URL', plugins_url());
