@@ -1,0 +1,9 @@
+function custom_plugin_deactivate(){
+	$page_id = get_option('custom_plugin_page_id');
+
+	if(!empty($page_id)){
+		wp_delete_post($page_id);
+	}
+}
+
+register_deactivation_hook(__FILE__, 'custom_plugin_deactivate');
