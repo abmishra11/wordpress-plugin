@@ -1,3 +1,5 @@
+https://www.youtube.com/watch?v=oL8ffxggYZY&list=PLT9miexWCpPUQkQwL-COHmo0Jd0qxLjTn&index=10
+
 function custom_plugin_activate(){
 	global $wpdb;
 	require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
