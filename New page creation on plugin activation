@@ -1,0 +1,19 @@
+function custom_plugin_activate(){
+	global $wpdb;
+	require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+  
+	$page = array();
+	$page['post_title'] = 'Custom Plugin Online Web Tutor';
+	$page['post_content'] = 'Custom Plugin Online Web Tutor';
+	$page['post_status'] = 'publish';
+	$page['post_slug'] = 'custom-plugin-online-web-tutor';
+	$page['post_type'] = 'page';
+
+	$page_id = wp_insert_post($page);
+
+	if(!empty($page_id)){
+		add_option('custom_plugin_page_id', $page_id);
+	}
+}
+
+register_activation_hook(__FILE__, 'custom_plugin_activate');
