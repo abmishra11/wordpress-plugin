@@ -1,0 +1,25 @@
+https://www.youtube.com/watch?v=MTrY9W4ECP0&list=PLT9miexWCpPUQkQwL-COHmo0Jd0qxLjTn&index=7
+
+define('PLUGIN_DIR_PATH', plugin_dir_path(__FILE__));
+define('PLUGIN_URL', plugins_url());
+define('PLUGIN_VERSION', 1.0);
+
+function custom_plugin_assets(){
+	wp_enqueue_style(
+		'cpl_style', // Name of the css file
+		PLUGIN_URL.'/custom-plugin/assets/css/style.css', //css file path
+		'', // dependency on the other file
+		PLUGIN_VERSION, // plugin version number
+		true // destination of the file, header/footer
+	);
+
+	wp_enqueue_script(
+		'cpl_script', // Name of the css file
+		PLUGIN_URL.'/custom-plugin/assets/js/script.js', //css file path
+		'', // dependency on the other file
+		PLUGIN_VERSION, // plugin version number
+		false // destination of the file, header/footer
+	);
+}
+
+add_action('init','custom_plugin_assets');
