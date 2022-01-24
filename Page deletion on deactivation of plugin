@@ -1,3 +1,5 @@
+https://www.youtube.com/watch?v=iQFngdFYwJ0&list=PLT9miexWCpPUQkQwL-COHmo0Jd0qxLjTn&index=11
+
 function custom_plugin_deactivate(){
 	$page_id = get_option('custom_plugin_page_id');
 
