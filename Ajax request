@@ -7,10 +7,11 @@
 
 // jQuery request
 jQuery("#frmPostOther").on("click", function(e){
-  e.preventDefault();
-  jQuery.post(ajaxurl, {action:"custom_plugin", name:"Online Web Tutor", tut:"Wordpress Plugin Development"}, function(response){
-    console.log(response);
-  });
+  	e.preventDefault();
+	var post_data = jQuery("#frmPostOther").serialize()+"&action=custom_plugin";
+	jQuery.post(ajaxurl, post_data, function(response){
+		console.log(response);
+	});
 });
 
 // Plugin function 
