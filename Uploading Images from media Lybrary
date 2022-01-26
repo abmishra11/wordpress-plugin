@@ -1,0 +1,31 @@
+// Adding media script using wp_enqueue_media() function
+
+add_action( 'admin_enqueue_scripts', 'add_media_script' );
+
+function add_media_script( $hook_suffix ) {
+
+  wp_enqueue_media();
+
+}
+
+// HTML part
+<form class="form-inline py-3" id="frmPostOther">
+  	<input type="text" name="txtName" required class="form-control"/>
+  	<input type="text" name="txtEmail" required class="form-control"/>
+  	<input type="button" name="btnImage" id="btnImage" value="Upload Image">
+  	<div>
+  		<img src="" id="getImage">
+  	</div>
+  	<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+// jQuery part
+jQuery("#btnImage").on('click', function(){
+  var images = wp.media({
+
+  }).open().on("select", function(e){
+    var uploadedImages = images.state().get("selection").first();
+    var selectedImages = uploadedImages.toJSON();
+    jQuery("#getImage").attr('src', selectedImages.url);
+  });
+});
